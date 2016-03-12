@@ -1,21 +1,21 @@
--- :name create-user! :! :n
--- :doc creates a new user record
-INSERT INTO users
-(id, first_name, last_name, email, pass)
-VALUES (:id, :first_name, :last_name, :email, :pass)
+-- :name create-product! :! :n
+-- :doc creates a new product record
+INSERT INTO products
+(id, name, slug, description)
+VALUES (:id, :name, :slug, :description)
 
--- :name update-user! :! :n
--- :doc update an existing user record
-UPDATE users
-SET first_name = :first_name, last_name = :last_name, email = :email
+-- :name update-product! :! :n
+-- :doc update an existing product record
+UPDATE products
+SET name = :name, slug = :slug, description = :description
 WHERE id = :id
 
--- :name get-user :? :1
--- :doc retrieve a user given the id.
-SELECT * FROM users
+-- :name get-product :? :1
+-- :doc retrieve a product given the id.
+SELECT * FROM products
 WHERE id = :id
 
--- :name delete-user! :! :n
--- :doc delete a user given the id
-DELETE FROM users
+-- :name delete-product! :! :n
+-- :doc delete a product given the id
+DELETE FROM products
 WHERE id = :id
